@@ -1,0 +1,45 @@
+{
+  "enabledPlugins": {
+    "claudekit-core@claudekit": true,
+    "claudekit-openspec@claudekit": true,
+    "claudekit-diff@claudekit": true,
+    "ponytail@ponytail": true
+  },
+  "extraKnownMarketplaces": {
+    "claudekit": {
+      "source": {
+        "source": "github",
+        "repo": "kurserino/claudekit"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "includeCoAuthoredBy": false,
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/ensure-claudekit.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(gh pr merge:*)"
+    ]
+  }
+}
