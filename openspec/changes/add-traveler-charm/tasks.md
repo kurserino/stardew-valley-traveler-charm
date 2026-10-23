@@ -4,7 +4,7 @@
 
 - [ ] 1.1 Rename the mod to Traveler Charm: `manifest.json` (`Name`, `UniqueID` `kurserino.TravelerCharm`, `EntryDll`, `Description`), project, solution, assembly and namespace `TravelerCharm`; verify `dotnet build` produces `TravelerCharm.dll` and SMAPI lists "Traveler Charm" on launch
 - [x] 1.2 Rename the GitHub repository to `stardew-valley-traveler-charm`, add the `stardew-valley`, `smapi`, `smapi-mod` and `stardew-valley-mod` topics, and point `origin` at the new URL; verify with `gh repo view --json name,repositoryTopics` and `git fetch`
-- [ ] 1.3 Add `docs/README.md` (Install, Configure, Compatibility, See also), `docs/release-notes.md` and `LICENSE`; verify the README's install steps and config options match the mod
+- [ ] 1.3 Add `docs/README.md` (Install, Configure, Compatibility, See also) and `LICENSE`, with no release notes and no mention of the old mod name; verify the README's install steps and config options match the mod
 - [ ] 1.4 Update `CLAUDE.md` with the new name and file layout, and verify no reference to "TeleportToYourLove" or "teleport-to-your-love" remains (`grep -ri`, excluding `openspec/`)
 
 ## 2. Item and art
