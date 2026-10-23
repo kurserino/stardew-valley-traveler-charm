@@ -6,7 +6,8 @@ The mod only works with the Wedding Ring and a typed "your love" name, which tie
 
 ## What Changes
 
-- Rename the mod to **Traveler Charm** (name, `UniqueID`, assembly and namespace).
+- Rename the mod to **Traveler Charm** (name, `UniqueID`, assembly and namespace), and the GitHub repository to `kurserino/stardew-valley-traveler-charm` with the `stardew-valley`, `smapi`, `smapi-mod` and `stardew-valley-mod` topics.
+- Add the docs SMAPI mods usually ship: `docs/README.md` (install, configure, compatibility, multiplayer notes), `docs/release-notes.md` and a `LICENSE`.
 - Add a new item, the **Traveler Charm**: using it teleports the player to another online player.
 - The Wizard sends each player the charm's crafting recipe by mail (3 Bat Wings + 1 Quartz); the charm is crafted in the normal crafting menu and cannot be bought or sold.
 - Each use costs energy; it cannot be used without enough energy.
@@ -30,6 +31,7 @@ None (no specs exist yet).
 
 ## Impact
 
+- GitHub repository name, topics and the local `origin` remote; `docs/`, `LICENSE`.
 - `manifest.json`, `.csproj`, `.sln`, `ModEntry.cs`, `Framework/ModConfig.cs`; new content-loading code, a sprite sheet asset (`assets/`) and translations (`i18n/`).
 - Depends on `migrate-to-smapi-4` (data-driven items, mail and qualified IDs need Stardew Valley 1.6).
 - Saves: items persist by string ID; removing the mod turns charms into Error Items without breaking the save.

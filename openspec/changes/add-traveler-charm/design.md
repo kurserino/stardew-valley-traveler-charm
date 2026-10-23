@@ -33,6 +33,8 @@ See proposal.md - Why. After `migrate-to-smapi-4` the mod runs on SMAPI 4 / Star
 - **Wedding Ring support**: when on, the button handler also accepts `(O)801`. Pressing the button on another farmer with the ring still lets vanilla handle proposals: the handler ignores the press when the cursor tile has a farmer, so proposals keep working.
 - **Debug mode**: `DebugMode` in `ModConfig`, default `false`, not registered in GMCM. When true, `Entry` registers `travelercharm_materials [count]` and `travelercharm_give [count]` with `Helper.ConsoleCommands` and logs a warning that debug mode is on. Items are created with `ItemRegistry.Create` and added with `Game1.player.addItemToInventory`; any leftover is dropped with `Game1.createItemDebris`. Commands check `Context.IsWorldReady` first. Alternative: a hotkey - rejected, console commands need no key conflicts and accept a count; SMAPI's own `player_add` exists, but these need no item IDs.
 - **Rename**: `UniqueID` `kurserino.TravelerCharm`, name "Traveler Charm", assembly/namespace `TravelerCharm`, project files renamed to match.
+- **Repository**: there is no official repo prefix for Stardew Valley mods; the user chose `stardew-valley-traveler-charm`. Discovery on GitHub goes through topics, so the repo gets `stardew-valley`, `smapi`, `smapi-mod` and `stardew-valley-mod`. Renamed with `gh repo rename`; GitHub redirects the old URL, and the local `origin` is updated to the new one.
+- **Docs and license**: `docs/README.md` follows the reference mods' sections (Install, Configure, Compatibility, See also), and `docs/release-notes.md` starts at 1.0.0 for Traveler Charm. License MIT, the most common among reference mods, unless the user picks another before applying.
 
 ## Risks / Trade-offs
 
