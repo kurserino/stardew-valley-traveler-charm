@@ -20,15 +20,20 @@
 
 ## 4. Teleport
 
-- [ ] 4.1 Replace the old vanilla-item / `YourLoveName` handler with a charm-only handler, deleting the vanilla item check: configured button, unavailable cases (alone, festival, cutscene, open menu) with their messages; verify each case in a split-screen session shows the expected message and does not teleport, and that `grep -rn 801` finds nothing in the C# sources
-- [ ] 4.2 Warp to the only other player and use up one charm, or show the player list (name and location) with Cancel when there are several, looking the target up again on pick; verify with two, three and eight players (the list fits on screen), a target in a mine level and in a cabin, a target who disconnects while the list is open, that a teleport takes exactly one charm from a stack, and that cancelling keeps every charm
-- [ ] 4.3 Implement the Totem, Wand, Hearts and Instant animations, broadcast to nearby players; verify each one in split-screen from both players' views
+- [ ] 4.1 Replace the old vanilla-item / `YourLoveName` handler with a charm-only handler, deleting the vanilla item check: configured button, unavailable cases (alone, festival, cutscene, open menu) with their messages; verify each case shows the expected message and does not teleport, and that `grep -rn 801` finds nothing in the C# sources
+- [ ] 4.2 Introduce the teleport target abstraction (real online players) and the `travelercharm_dummies <count>|remove <name>|clear` debug command with dummies cleared on return to title; verify creating, listing, removing and clearing dummies in the console, that an unknown name is reported, and that dummies are gone after returning to the title
+- [ ] 4.3 Warp to the only target and use up one charm, or show the list (`Name (location)`, dummies marked `[dummy]`) with Cancel when there are several, looking the target up again on pick; verify alone with dummies: one dummy teleports directly, seven dummies fit on screen, dummies in a mine level and a cabin, a dummy removed while the list is open, exactly one charm taken from a stack, and cancelling keeps every charm
+- [ ] 4.4 Implement the Totem, Wand, Hearts and Instant animations, broadcast to nearby players; verify each one plays when teleporting to a dummy
 
 ## 5. Config
 
 - [ ] 5.1 Replace `ModConfig` with the new options and defaults, and register them in GMCM (button mapping, sprite, animation); verify a fresh `config.json` holds the defaults and that the mod still works without GMCM installed
 - [ ] 5.2 Invalidate `Data/Objects` when the sprite changes; verify the sprite changes without restarting
 - [ ] 5.3 Verify save safety: save with a charm in a chest, remove the mod and load (Error Item, no crash), save, reinstall and load (working charm again)
+
+## 6. Multiplayer check
+
+- [ ] 6.1 Run two game instances on the same machine, one hosting and one joining over LAN at `127.0.0.1`, both with the mod; verify the joining player gets the Wizard's letter and recipe, teleports to the host while the host is walking, the host sees each animation, the charm is used up, and the host's charm list does not show the other instance's dummies
 
 ## Workflow follow-up
 

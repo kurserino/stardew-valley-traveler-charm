@@ -76,8 +76,16 @@ appear in Generic Mod Config Menu, and SMAPI warns at launch while debug mode is
 | ------- | ------------ |
 | `travelercharm_materials [count]` | Adds the materials for `count` charms (default 1): 3 Bat Wings and 1 Quartz each. |
 | `travelercharm_give [count]` | Adds `count` Traveler Charms (default 1). |
+| `travelercharm_dummies <count>` | Creates `count` fake players in random places, so you can test the charm alone. |
+| `travelercharm_dummies remove <name>` | Removes one fake player. |
+| `travelercharm_dummies clear` | Removes all fake players. |
 
-Both need a loaded save. Items that don't fit in your inventory drop at your feet.
+They need a loaded save. Items that don't fit in your inventory drop at your feet. Fake players
+show up in the charm's list as `[dummy]`, exist only on your machine, and disappear when you
+return to the title screen.
+
+To test with real players without a second computer, run two copies of the game: host a co-op
+farm in one, and join it from the other over LAN at `127.0.0.1`.
 
 ## See also
 * [Generic Mod Config Menu][]

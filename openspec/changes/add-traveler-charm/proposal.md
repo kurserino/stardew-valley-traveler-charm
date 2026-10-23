@@ -13,7 +13,7 @@ The mod piggybacks on a vanilla item and a typed "your love" name, which ties it
 - The Wizard sends each player the charm's crafting recipe by mail (3 Bat Wings + 1 Quartz); the charm is crafted in the normal crafting menu and cannot be bought or sold.
 - Works with any number of players up to the game's multiplayer limit (the original mod assumed a single second player): with one other player online the charm teleports to them; with several, the player picks one from a list showing each player's name and location.
 - Config (Generic Mod Config Menu): button mapping (kept), charm sprite from a set of predefined variants, and teleport animation.
-- A debug mode for development, off by default, adds console commands that give the recipe's materials and the charm itself.
+- A debug mode for development, off by default, adds console commands that give the recipe's materials and the charm itself, and that create fake teleport targets (dummies) so the charm and its player list can be tested alone.
 - **BREAKING**: the mod no longer reacts to any vanilla item; only the Traveler Charm teleports.
 - **BREAKING**: the `YourLoveName` config option is removed; the target is chosen when the charm is used.
 - **BREAKING**: the new `UniqueID` makes SMAPI treat it as a new mod; the old mod's config is not carried over.
