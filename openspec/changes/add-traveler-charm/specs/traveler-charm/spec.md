@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Traveler Charm is a magical item, crafted from a recipe the Wizard gives, that lets a player teleport to another player in a multiplayer game at the cost of energy.
+The Traveler Charm is a magical item, crafted from a recipe the Wizard gives, that lets a player teleport to another player in a multiplayer game.
 
 ## ADDED Requirements
 
@@ -47,6 +47,13 @@ A player who knows the recipe SHALL be able to craft one Traveler Charm from 3 B
 - **WHEN** a player who knows the recipe has lost their charm
 - **THEN** they can craft a new one
 
+### Requirement: Only the charm teleports
+The Traveler Charm SHALL be the only item that teleports. The mod SHALL NOT change the behavior of any vanilla item.
+
+#### Scenario: Vanilla item
+- **WHEN** a player uses any vanilla item with the configured button
+- **THEN** the mod does nothing and the item keeps its vanilla behavior
+
 ### Requirement: Teleport to the only other player
 Using the charm with the configured button SHALL teleport the user to the tile where the other player stands, in that player's current location, when exactly one other player is online.
 
@@ -71,33 +78,37 @@ When more than one other player is online, using the charm SHALL show a list wit
 
 #### Scenario: Player leaves while the list is open
 - **WHEN** a listed player disconnects before the user picks them and the user picks them
-- **THEN** no teleport happens, no energy is spent, and a message says that player is no longer online
+- **THEN** no teleport happens and a message says that player is no longer online
 
 #### Scenario: Player cancels
 - **WHEN** the player cancels the list
-- **THEN** nothing happens and no energy is spent
+- **THEN** nothing happens
 
-### Requirement: Energy cost
-Each teleport SHALL cost the configured amount of energy, spent when the teleport happens. A player with less energy than the cost SHALL NOT teleport.
+### Requirement: Charm is consumed
+Each successful teleport SHALL use up one Traveler Charm from the stack the player holds, like a Warp Totem. A charm SHALL NOT be used up when no teleport happens.
 
-#### Scenario: Enough energy
-- **WHEN** a player with at least the configured energy cost teleports
-- **THEN** their energy drops by the configured cost
+#### Scenario: Teleport uses one charm
+- **WHEN** a player holding a stack of 3 charms teleports
+- **THEN** they arrive with 2 charms left
 
-#### Scenario: Not enough energy
-- **WHEN** a player with less energy than the configured cost uses the charm
-- **THEN** no teleport happens, no energy is spent, and a message says they are too tired
+#### Scenario: Last charm
+- **WHEN** a player holding a single charm teleports
+- **THEN** the charm leaves their inventory
+
+#### Scenario: No teleport
+- **WHEN** the player cancels the list, the target goes offline, or the charm is unavailable
+- **THEN** the player keeps all their charms
 
 ### Requirement: Charm unavailable
 Using the charm SHALL do nothing but show a message when no other player is online, and SHALL do nothing during cutscenes, festivals or while a menu is open.
 
 #### Scenario: Playing alone
 - **WHEN** a player uses the charm with no other player online
-- **THEN** a message says there is no one to travel to, and no energy is spent
+- **THEN** a message says there is no one to travel to
 
 #### Scenario: During a festival
 - **WHEN** a player uses the charm during a festival or cutscene
-- **THEN** nothing happens and no energy is spent
+- **THEN** nothing happens
 
 ### Requirement: Teleport animation
 The teleport SHALL play the animation chosen in the config before the user arrives, visible to the other players in the user's location.

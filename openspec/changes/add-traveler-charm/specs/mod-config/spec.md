@@ -7,7 +7,7 @@ Lets each player tune how the Traveler Charm looks and behaves for them, through
 ## ADDED Requirements
 
 ### Requirement: Configurable options
-The mod SHALL offer these options in its config file and, when Generic Mod Config Menu is installed, in its in-game menu: button mapping ("Tool button" or "Action button", default "Tool button"), charm sprite, teleport animation, energy cost (0 to 100, default 20) and Wedding Ring support (default off).
+The mod SHALL offer these options in its config file and, when Generic Mod Config Menu is installed, in its in-game menu: button mapping ("Tool button" or "Action button", default "Tool button"), charm sprite and teleport animation.
 
 #### Scenario: Defaults on first run
 - **WHEN** the mod runs with no config file
@@ -37,17 +37,6 @@ The player SHALL pick the teleport animation from: Totem (default, like a Warp T
 #### Scenario: Animation changed
 - **WHEN** the player picks "Hearts" and then uses the charm
 - **THEN** the teleport plays the Hearts animation
-
-### Requirement: Wedding Ring as a charm
-When Wedding Ring support is on, the Wedding Ring SHALL work exactly like a Traveler Charm, energy cost included.
-
-#### Scenario: Support off
-- **WHEN** Wedding Ring support is off and the player uses a Wedding Ring
-- **THEN** the mod does nothing and the ring keeps its normal behavior
-
-#### Scenario: Support on
-- **WHEN** Wedding Ring support is on and the player uses a Wedding Ring with one other player online
-- **THEN** the player teleports to that player and spends the configured energy
 
 ### Requirement: Config is per player
 Each player's options SHALL apply only to them in multiplayer.

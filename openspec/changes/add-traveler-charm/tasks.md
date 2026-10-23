@@ -20,15 +20,14 @@
 
 ## 4. Teleport
 
-- [ ] 4.1 Replace the Wedding Ring / `YourLoveName` handler with the charm handler: configured button, unavailable cases (alone, festival, cutscene, open menu) with their messages, and the energy check; verify each case in a split-screen session spends no energy and shows the expected message
-- [ ] 4.2 Warp to the only other player, or show the player list (name and location) with Cancel when there are several, looking the target up again on pick; verify with two, three and eight players (the list fits on screen), a target in a mine level and in a cabin, a target who disconnects while the list is open, and that cancelling costs no energy
-- [ ] 4.3 Spend the configured energy right before the warp; verify energy drops by the configured cost and that a player below the cost cannot teleport
-- [ ] 4.4 Implement the Totem, Wand, Hearts and Instant animations, broadcast to nearby players; verify each one in split-screen from both players' views
+- [ ] 4.1 Replace the old vanilla-item / `YourLoveName` handler with a charm-only handler, deleting the vanilla item check: configured button, unavailable cases (alone, festival, cutscene, open menu) with their messages; verify each case in a split-screen session shows the expected message and does not teleport, and that `grep -rn 801` finds nothing in the C# sources
+- [ ] 4.2 Warp to the only other player and use up one charm, or show the player list (name and location) with Cancel when there are several, looking the target up again on pick; verify with two, three and eight players (the list fits on screen), a target in a mine level and in a cabin, a target who disconnects while the list is open, that a teleport takes exactly one charm from a stack, and that cancelling keeps every charm
+- [ ] 4.3 Implement the Totem, Wand, Hearts and Instant animations, broadcast to nearby players; verify each one in split-screen from both players' views
 
 ## 5. Config
 
-- [ ] 5.1 Replace `ModConfig` with the new options and defaults, and register them in GMCM (button mapping, sprite, animation, energy cost 0-100, Wedding Ring support); verify a fresh `config.json` holds the defaults and that the mod still works without GMCM installed
-- [ ] 5.2 Invalidate `Data/Objects` when the sprite changes and accept `(O)801` when Wedding Ring support is on (ignoring presses aimed at a farmer so proposals still work); verify the sprite changes without restarting, the ring teleports only with support on, and a proposal with the ring still works
+- [ ] 5.1 Replace `ModConfig` with the new options and defaults, and register them in GMCM (button mapping, sprite, animation); verify a fresh `config.json` holds the defaults and that the mod still works without GMCM installed
+- [ ] 5.2 Invalidate `Data/Objects` when the sprite changes; verify the sprite changes without restarting
 - [ ] 5.3 Verify save safety: save with a charm in a chest, remove the mod and load (Error Item, no crash), save, reinstall and load (working charm again)
 
 ## Workflow follow-up

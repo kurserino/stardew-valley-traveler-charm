@@ -8,5 +8,5 @@
 
 ## 2. Code
 
-- [ ] 2.1 Replace the `ParentSheetIndex == 801` check with `QualifiedItemId == "(O)801"` and fix any other SMAPI 4 API breaks, verifying `dotnet build` succeeds with no warnings from the changed code
-- [ ] 2.2 In a two-player session, verify that using the Wedding Ring still warps to the configured player and that the GMCM options still show and save
+- [ ] 2.1 Fix any SMAPI 4 API breaks in the current code, leaving the old item check for `add-traveler-charm` to delete; verify `dotnet build` succeeds with no warnings from the changed code
+- [ ] 2.2 Verify in-game that SMAPI loads the mod with no errors and that the GMCM options still show and save

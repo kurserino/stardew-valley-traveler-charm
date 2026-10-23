@@ -8,7 +8,7 @@ The mod targets SMAPI 3 / Stardew Valley 1.5 (`net4.5`, ModBuildConfig 4.1.1), w
 
 - Retarget the project to `net6.0` with ModBuildConfig 4.x for SMAPI 4 / Stardew Valley 1.6.
 - Update `manifest.json` `MinimumApiVersion` to `4.0.0`.
-- Replace the numeric item check (`ParentSheetIndex == 801`) with the 1.6 qualified item ID (`(O)801`), keeping the current Wedding Ring behavior.
+- Fix any SMAPI 4 API breaks in the current code. The old item check is left as is: `add-traveler-charm` deletes it.
 - Remove the dead commented-out MSBuild settings and the unused framework references from the `.csproj`.
 - Follow the build layout of the reference SMAPI mod repositories (Pathoschild/StardewMods, CJBok/SDV-Mods): shared settings in `Directory.Build.props` (target framework, `Nullable`, `LangVersion`, release zip folder) and an `.editorconfig`.
 - **BREAKING**: the mod no longer loads on Stardew Valley 1.5 / SMAPI 3.

@@ -25,7 +25,7 @@ The morning after you first meet the Wizard in his tower, he sends you a letter 
 | Bat Wing   | 3      |
 | Quartz     | 1      |
 
-The recipe stays learned, so you can craft a new charm if you lose yours. The charm can't be
+The recipe stays learned, so you can craft more charms whenever you need them. The charm can't be
 bought, sold or shipped.
 
 ### Teleporting
@@ -34,9 +34,9 @@ Hold the charm and press the configured button (the use-tool button by default):
 * with one other player online, you teleport straight to them;
 * with several, pick who to visit from a list showing each player's name and location.
 
-Each teleport costs energy (20 by default). You can't teleport when you're too tired, while
-playing alone, during festivals or cutscenes, or with a menu open. Cancelling the list costs
-nothing.
+Like a Warp Totem, each teleport uses up one charm, so craft a few to carry with you. You can't
+teleport while playing alone, during festivals or cutscenes, or with a menu open; the charm is
+only used up when you actually teleport.
 
 ## Configure
 If you install [Generic Mod Config Menu][], you can click the cog button (⚙) on the title screen
@@ -48,8 +48,6 @@ edit the `config.json` file the mod creates in its folder after you run the game
 | Button map | Tool button, Action button | Tool button | The button that uses the charm. |
 | Sprite | Charm, Ring, Amulet, Compass, Feather | Charm | How the charm looks to you. Applies right away. |
 | Animation | Totem, Wand, Hearts, Instant | Totem | The teleport effect: like a Warp Totem, like the Return Scepter, floating hearts, or none. Nearby players see it too. |
-| Energy cost | 0 to 100 | 20 | Energy spent per teleport. |
-| Wedding Ring | on, off | off | Lets the Wedding Ring work as a Traveler Charm too. Proposing with the ring still works. |
 
 Each player's options apply only to them.
 
